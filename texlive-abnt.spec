@@ -1,6 +1,6 @@
 Name:		texlive-abnt
 Version:	55471
-Release:	1
+Release:	2
 Summary:	Typesetting academic works according to ABNT rules
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/abnt
