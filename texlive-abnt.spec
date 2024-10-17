@@ -3,7 +3,7 @@ Version:	55471
 Release:	2
 Summary:	Typesetting academic works according to ABNT rules
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/abnt
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/abnt
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/abnt.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/abnt.doc.r%{version}.tar.xz
