@@ -1,37 +1,23 @@
-Name:		texlive-abnt
-Version:	55471
-Release:	2
+%global tl_name abnt
+%global tl_revision 55471
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Typesetting academic works according to ABNT rules
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/abnt
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/abnt.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/abnt.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/abnt.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/abnt.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The ABNT package provides a clean and practical implementation
-of the ABNT rules for academic texts. Its purpose is to be as
-simple and user-friendly as possible.
+The ABNT package provides a clean and practical implementation of the
+ABNT rules for academic texts. Its purpose is to be as simple and user-
+friendly as possible.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/abnt
-%doc %{_texmfdistdir}/doc/latex/abnt
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
